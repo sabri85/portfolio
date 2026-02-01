@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Gaillot — Étudiant DEUST Webmaster</h1>
+  <p>Licence de biologie, passionné par le web, la pédagogie et les projets techniques.</p>
+
+  <h2>Compétences</h2>
+  <ul>
+    <li>HTML / CSS / GitHub / FileZilla</li>
+    <li>Python (boucles, fonctions, listes)</li>
+    <li>Diagnostic technique et guides pédagogiques</li>
+  </ul>
+
+  <h2>Réseaux</h2>
+  <ul>
+    <li><a href="https://github.com/sabri85" target="_blank">Mon GitHub</a></li>
+  </ul>
+
+  <h2>Citation du jour</h2>
+  <div id="quote"></div>
+  <script>
+    fetch("https://api.quotable.io/random")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("quote").innerText = data.content;
+      });
+  </script>
+</body>
+</html>
