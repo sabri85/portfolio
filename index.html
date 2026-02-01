@@ -3,54 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfolio — Gaillot</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
-    <h1>Gaillot</h1>
-    <p>Étudiant DEUST Webmaster & Licence de biologie</p>
+    <h1>Portfolio de Gaillot</h1>
     <nav>
       <a href="index.html">Accueil</a>
       <a href="travaux.html">Mes Travaux</a>
     </nav>
   </header>
 
-  <section>
-    <h2>À propos</h2>
-    <p>Passionné par le web, la pédagogie, et les projets techniques. Curieux, rigoureux, et toujours en quête de clarté.</p>
-  </section>
+  <main>
+    <section class="card">
+      <h2>À propos</h2>
+      <p>Étudiant en DEUST Webmaster, titulaire d’une licence de biologie. Passionné par le web, la pédagogie et les projets techniques.</p>
+    </section>
 
-  <section>
-    <h2>Compétences</h2>
-    <ul>
-      <li>HTML / CSS / GitHub / FileZilla</li>
-      <li>Python : boucles, fonctions, listes</li>
-      <li>Diagnostic technique et guides pédagogiques</li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>Compétences</h2>
+      <ul>
+        <li>HTML / CSS / GitHub / FileZilla</li>
+        <li>Python : boucles, fonctions, listes</li>
+        <li>Diagnostic technique et guides pédagogiques</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Réseaux</h2>
-    <ul>
-      <li><a href="https://github.com/sabri85" target="_blank">GitHub</a></li>
-      <li><a href="mailto:tonemail@example.com">Email</a></li>
-    </ul>
-  </section>
+    <section class="card">
+      <h2>Réseaux</h2>
+      <ul>
+        <li><a href="https://github.com/sabri85" target="_blank">Mon GitHub</a></li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Citation du jour</h2>
-    <div id="quote">Chargement...</div>
-    <script>
-      fetch("https://api.quotable.io/random")
-        .then(response => response.json())
-        .then(data => {
-          document.getElementById("quote").innerText = `"${data.content}" — ${data.author}`;
-        });
-    </script>
-  </section>
+    <section class="card">
+      <h2>Citation du jour</h2>
+      <div id="quote">Chargement...</div>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2026 — Portfolio de Gaillot</p>
   </footer>
+
+  <script>
+    fetch("https://api.quotable.io/random")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("quote").innerText = `"${data.content}" — ${data.author}`;
+      });
+  </script>
+
 </body>
 </html>
