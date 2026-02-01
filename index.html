@@ -2,33 +2,55 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mon Portfolio</title>
+  <title>Portfolio — Gaillot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Gaillot — Étudiant DEUST Webmaster</h1>
-  <p>Licence de biologie, passionné par le web, la pédagogie et les projets techniques.</p>
+  <header>
+    <h1>Gaillot</h1>
+    <p>Étudiant DEUST Webmaster & Licence de biologie</p>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="travaux.html">Mes Travaux</a>
+    </nav>
+  </header>
 
-  <h2>Compétences</h2>
-  <ul>
-    <li>HTML / CSS / GitHub / FileZilla</li>
-    <li>Python (boucles, fonctions, listes)</li>
-    <li>Diagnostic technique et guides pédagogiques</li>
-  </ul>
+  <section>
+    <h2>À propos</h2>
+    <p>Passionné par le web, la pédagogie, et les projets techniques. Curieux, rigoureux, et toujours en quête de clarté.</p>
+  </section>
 
-  <h2>Réseaux</h2>
-  <ul>
-    <li><a href="https://github.com/sabri85" target="_blank">Mon GitHub</a></li>
-  </ul>
+  <section>
+    <h2>Compétences</h2>
+    <ul>
+      <li>HTML / CSS / GitHub / FileZilla</li>
+      <li>Python : boucles, fonctions, listes</li>
+      <li>Diagnostic technique et guides pédagogiques</li>
+    </ul>
+  </section>
 
-  <h2>Citation du jour</h2>
-  <div id="quote"></div>
-  <script>
-    fetch("https://api.quotable.io/random")
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("quote").innerText = data.content;
-      });
-  </script>
+  <section>
+    <h2>Réseaux</h2>
+    <ul>
+      <li><a href="https://github.com/sabri85" target="_blank">GitHub</a></li>
+      <li><a href="mailto:tonemail@example.com">Email</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Citation du jour</h2>
+    <div id="quote">Chargement...</div>
+    <script>
+      fetch("https://api.quotable.io/random")
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("quote").innerText = `"${data.content}" — ${data.author}`;
+        });
+    </script>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 — Portfolio de Gaillot</p>
+  </footer>
 </body>
 </html>
